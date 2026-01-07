@@ -1,6 +1,7 @@
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from fastapi.testclient import TestClient
+from main import app,limiter
 client = TestClient(app)
 def make_request():
     response = client.get("/data")
