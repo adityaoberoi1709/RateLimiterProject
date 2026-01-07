@@ -29,13 +29,13 @@ def get_data(request: Request):
           }
     except HTTPException:
         raise
-    '''except Exception as e:
+    except Exception as e:
         # Log error to console
         print("Error in /data:", e)
         raise HTTPException(
             status_code=500,
             detail="Internal server error"
-        )'''
+        )
 @app.get("/config")
 def update_limits(
     max_request: int = Query(None, description="Max requests per window"),
